@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formularz edycji</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./../assets/scss/search.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap"> 
+  </head>
+  <body>
+      
+      <h1>Edycja danych filmu</h1>
+
+ {{!-- edit form --}}
+<form action="/edit1Film" method="POST" id="formEditFilmData">
+
+<input type="hidden" name="idToEdit" id="e_id" value="{{id}}"><br><br>
+
+<label for="e_title">Tytuł: </label>
+  <input type="text" name="e_title" id="e_title" value="{{title}}" ><br><br>
+<label for="e_director">Reżyser: </label>
+  <input type="text" name="e_director" id="e_director" value="{{director}}"><br><br>
+
+<label for="e_prodYear">Rok produkcji: </label>
+<input type="number" name="e_prodYear" id="e_prodYear" min="1990" max="2020" step="1" value="{{prod_dt}}"><br><br>
+
+  <label for="e_act">Aktor: </label>
+  <input type="text" name="e_act" id="e_act" value="{{actors}}"><br><br>
+  <input type="submit" value="Zatwierdź" id="btnEdit" class="btn1" > 
+  <input type="button" value="Anuluj" id="btnEditCan" class="btn1" > 
+</form> 
+ 
+
+
+
+
+
+
+
+
+<br>
+<a href="/">Powrót na stronę główną</a> 
+  </body>
+<script  type='text/javascript' src="./../js/edit.js"></script>
+
+</html>

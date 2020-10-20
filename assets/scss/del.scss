@@ -1,0 +1,43 @@
+body{
+    background-color: thistle;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    
+}
+
+.conf{
+color:blue;
+text-decoration: yellow;
+font-weight: bold;
+
+}
+
+div{
+  width: 90vw;
+  margin: 20px auto;
+  background-color: white;
+  }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+table .table_head{
+    background-color: #808080;
+    
+}
+#table_head.active{
+  background-color:red;  
+}

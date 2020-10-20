@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formularz rejestracji filmu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./../assets/scss/register.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap"> 
+  </head>
+  <body>
+      
+<a href="/" class="right"><button class="btn right"><i class="fa fa-home"></i> Home</button></a> 
+
+      <h1>Dodawanie filmu do bazy</h1>
+ {{!-- login form --}}
+ {{!-- po kliknięciu submit następuje przekierowanie do endpointu '/regToServer' --}}
+<form action="/regToServer" method="POST" id="formRegUser">
+<label for="r_title">Tytuł: </label>
+  <input type="text" name="r_title" id="r_title" placeholder="tytuł"><br><br>
+<label for="r_director">Reżyser: </label>
+  <input type="text" name="r_director" id="r_director" placeholder="reżyser"><br><br>
+
+  <label for="prodYear">Rok produkcji: </label>
+  <input type="text" name="prodYear" id="prodYear" placeholder="rok produkcji"><br><br>
+
+  <label for="r_act">Aktorzy: </label>
+  <input type="text" name="r_act" id="r_act" placeholder="aktorzy"><br><br>
+  <input type="submit" value="Zarejestruj" id="btnReg" class="btn1" > 
+  <input type="button" value="Anuluj" id="btnCan1" class="btn1" > 
+</form> 
+ 
+<p>{{Confirmation1}}</p>
+
+
+  
+  <p id="comValidation" class="comm"></p>
+  
+
+
+
+
+
+      
+  </body>
+<script   src="./../js/registration.js"></script>
+
+</html>

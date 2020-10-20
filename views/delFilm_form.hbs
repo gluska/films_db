@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formularz usuwania filmu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./../assets/scss/del.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap"> 
+  </head>
+  <body>
+      
+      <h1>Zatwierdzanie filmu do usunięcia z bazy</h1>
+
+ {{!-- edit form --}}
+<form action="/del1Film" method="POST" id="formDel1FilmData">
+
+<input type="hidden" name="idToDel" id="del_id" value="{{id}}"><br><br>
+
+<label for="del_title">Tytuł: </label>
+  <input type="text" name="del_title" id="del_title" value="{{title}}" readonly><br><br>
+<label for="del_director">Reżyser: </label>
+  <input type="text" name="del_director" id="del_director" value="{{director}}" readonly><br><br>
+
+<label for="del_prodYear">Rok produkcji: </label>
+<input type="number" name="del_prodYear" id="del_prodYear" value="{{prod_dt}}" readonly><br><br>
+
+  <label for="del_act">Aktor: </label>
+  <input type="text" name="del_act" id="del_act" value="{{actors}}" readonly><br><br>
+  <input type="submit" value="Zatwierdź" id="btnDel" class="btn1" > 
+  <input type="button" value="Anuluj" id="btnDelCan" class="btn1" > 
+</form> 
+ 
+
+
+
+
+
+
+
+
+<br>
+<a href="/">Powrót na stronę główną</a> 
+  </body>
+<script  type='text/javascript' src="./../js/edit.js"></script>
+
+</html>

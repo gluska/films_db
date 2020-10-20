@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formularz wyszukiwania</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./../assets/scss/find.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap"> 
+  </head>
+  <body>
+
+<div class="tooltip">
+  <a href="/" class="right">Home</a><br>
+
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+
+<h1>Wyszukiwarka filmów</h1>
+ {{!-- login form --}}
+<form action="/findFilm" method="POST" id="formSearchFilmData">
+<label for="f_title">Tytuł: </label>
+  <input type="text" name="f_title" id="f_title" placeholder="szukana fraza"><br><br>
+<label for="f_director">Reżyser: </label>
+  <input type="text" name="f_director" id="f_director" placeholder="szukana fraza"><br><br>
+
+  <label for="f_prodYear">Rok produkcji: </label>
+  <input type="number" name="f_prodYear" id="f_prodYear" placeholder="rok produkcji" min="1990" max="2020" step="1" value="2020"><br><br>
+
+  <label for="f_act">Aktor: </label>
+  <input type="text" name="f_act" id="f_act" placeholder="szukana fraza"><br><br>
+  <input type="submit" value="Wyszukaj" id="btnSearch" class="btn1" > 
+  <input type="button" value="Anuluj" id="btnSearchCan" class="btn1" > 
+</form> 
+ 
+
+ {{!-- <div class="conf">{{{user.stringify}}}</div><br>
+   <div>Name: {{user.name}}</div> --}}
+
+{{!-- {{user.name}} --}}
+{{!-- {{studentsData.studentList}} --}}
+{{!-- <div>{{Confirmation1}}</div> --}}
+
+<p>WYNIK WYSZUKIWANIA</p> 
+<div>
+  <table>
+    <tr id="table_head" class="table_head">
+      <th>Title</th>
+      <th>Director</th>
+      <th>Production's year</th>
+      <th>Actors</th>
+      <th>Edit</th>
+    </tr>
+  
+     {{#each list}}  {{!--dane zasilające z frontendu --}}
+        
+        <tr>
+            <td>{{title }}</td>
+            <td>{{director}}</td>    
+            <td>{{prod_date}}</td>   
+            <td>{{actors}}</td> 
+            <td>
+              {{!-- <button class="editbtn" id="{{_id}}">edit</button> --}}
+              <form action="/editFilm_enter_form" method="POST" id="formEditFilmData">
+              <input type="hidden" name="idToEdit" id="idToEdit" value="{{_id}}">
+              <input type="hidden" name="titleToEdit" id="titleToEdit" value="{{title}}">
+              <input type="hidden" name="directorToEdit" id="directorToEdit" value="{{director}}">
+              <input type="hidden" name="prdtToEdit" id="prdtToEdit" value="{{prod_date}}">
+              <input type="hidden" name="actorsToEdit" id="actorsToEdit" value="{{actors}}">
+              <input type="submit" value="Edit" id="btnEditFilm"  class="btn1" > 
+              </form>
+
+              <form action="/delFilm_enter_form" method="POST" id="formDelFilm">
+              <input type="hidden" name="idToDel" id="idToDel" value="{{_id}}">
+              <input type="hidden" name="titleToDel" id="titleToDel" value="{{title}}">
+              <input type="hidden" name="directorToDel" id="directorToDel" value="{{director}}">
+              <input type="hidden" name="prdtToDel" id="prdtToDel" value="{{prod_date}}">
+              <input type="hidden" name="actorsToDel" id="actorsToDel" value="{{actors}}">
+
+
+
+
+              <input type="submit" value="Delete" id="btnDelFilm"  class="btn1" > 
+              </form>
+
+
+            </td>
+        </tr>
+    {{/each}} 
+
+  </table>
+</div>
+
+ <script>  {{!--to jest potrzebne aby móc skorzystać ze zmiennych w find.sj --}}
+var name = "{{ zmiennaNode }}";
+var tblFromNode = "{{ users }}";
+ var titlesArrFromNode = "{{resultTitleArrEx}}";
+</script>
+
+
+
+
+
+
+      
+  </body>
+<script  type='text/javascript' src="./../js/find.js"></script>
+
+</html>
